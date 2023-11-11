@@ -1,0 +1,74 @@
+{% extends 'template.html' %}
+
+{% block content %}
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <form class="modal-content" method="POST" action="/process" >
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Novo Diagnostico</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                {{ form.csrf_token }}
+                <div>
+                  <label for="formFileLg" class="form-label">Arquivo</label>
+                  {{ form.file(type="file", class="orm-control form-control-lg", id="formFileLg") }}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div style="width: 100vw; min-height: 500px" >
+            <div style="width: 90%; display: flex; justify-content: end; align-items: center; margin-top: 30px" >
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Novo</button>
+            </div>
+            <table class="table m-5" style="max-width: 90vw;">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Data e Hora</th>
+                  <th scope="col">Categoria X</th>
+                  <th scope="col">Categoria Y</th>
+                  <th scope="col">Ritmo</th>
+                  <th scope="col">Certeza</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>01/01/2023</td>
+                  <td>cat x</td>
+                  <td>cat y</td>
+                  <td>ritmo z</td>
+                  <td>75%</td>
+                  <td><span class="btn btn-success">Correto</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>01/01/2023</td>
+                  <td>cat x</td>
+                  <td>cat y</td>
+                  <td>ritmo z</td>
+                  <td>75%</td>
+                  <td><span class="btn btn-success">Correto</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>01/01/2023</td>
+                  <td>cat x</td>
+                  <td>cat y</td>
+                  <td>ritmo z</td>
+                  <td>75%</td>
+                  <td><span class="btn btn-success">Correto</span></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+{% endblock %}
