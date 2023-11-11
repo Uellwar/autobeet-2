@@ -2,10 +2,24 @@ import os
 import csv
 import random
 
-def load_data(num_samples=1,
-              target_class='ST', 
+def load_data(num_samples=1, target_class='ST', 
               data_dir='/content/drive/MyDrive/Projeto_TCC_ECG/dados_ecg/ECGDataDenoised/ECGDataDenoised/', 
               labels_csv='/content/drive/MyDrive/Projeto_TCC_ECG/dados_ecg/Diagnostics.CSV'):
+    """
+    Carrega dados de eletrocardiograma (ECG) para análise.
+
+    Parameters:
+    - num_samples (int): Número de amostras a serem carregadas. Padrão é 1.
+    - target_class (str): Classe alvo dos dados. Padrão é 'ST'.
+    - data_dir (str): Diretório onde os arquivos de dados estão localizados. Padrão é o diretório fornecido.
+    - labels_csv (str): Caminho para o arquivo CSV que contém os rótulos das classes. Padrão é o arquivo fornecido.
+
+    Returns:
+    - data (list): Lista de listas contendo os dados do ECG.
+    - random_file (str): Nome aleatório do arquivo de dados carregado.
+    - target_class (str): Classe alvo dos dados carregados.
+    """    
+    
     col_data = 'FileName'
     col_label = 'Rhythm'
 
